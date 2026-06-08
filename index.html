@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah AI Studio - Premium Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <sidebar class="glass">
+            <div>
+                <div class="logo"><i class="fa-solid fa-wand-magic-sparkles"></i> Abdullah AI</div>
+                <button class="btn-new-chat" onclick="createNewChat()"><i class="fa-solid fa-plus"></i> New Chat</button>
+                <div class="chat-history-list" id="chatHistory">
+                    </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button onclick="toggleTheme()" class="btn-new-chat" style="background:transparent; border:1px solid var(--border-glass); margin-bottom:10px;">
+                    <i class="fa-solid fa-moon"></i> Theme Mode
+                </button>
+                <div id="userInfo" style="font-size:0.85rem; color:var(--text-muted);">Loading Profile...</div>
+            </div>
+        </sidebar>
+
+        <main>
+            <header class="glass">
+                <div class="header-status">
+                    <h3 id="currentChatTitle">Studio Assistant</h3>
+                </div>
+                <div class="header-actions">
+                    <button onclick="deleteActiveChat()" style="background:none; border:none; color:var(--text-muted); margin-right:15px; cursor:pointer;"><i class="fa-solid fa-trash"></i> Clear</button>
+                    <button onclick="logout()" style="background:none; border:none; color:var(--text-muted); cursor:pointer;"><i class="fa-solid fa-sign-out"></i> Exit</button>
+                </div>
+            </header>
+
+            <div class="chat-area" id="chatArea">
+                <div class="message ai glass">
+                    السلام علیکم! Welcome to Abdullah AI Studio. How can I assist you in English or Urdu today?
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-box glass">
+                    <input type="text" id="userInput" placeholder="Ask Abdullah AI anything... / کچھ بھی پوچھیں">
+                    <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
